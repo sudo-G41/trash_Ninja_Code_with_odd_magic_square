@@ -12,7 +12,7 @@ typedef vector<VI> VV;
 typedef _i zxcv;
 void print(VV, _i);
 void odd(zxcv,VV&);
-void four(_i n,VV&);
+void four(_i n,VV&);//개발중
 
 int main(_i argc, char** args){
 	VV arr;
