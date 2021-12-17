@@ -38,7 +38,6 @@ void odd(zxcv n, VV&arr){
 void four(_i n,VV&arr){
 	for(zxcv x=0,y=0,z=0;y<n;++x<n?z:y+++(x=0))
 		arr[y][x]=++z;
-	int qaz=0;
 	for(zxcv r=0,co=n/4,c1=n/4,c2=n-n/4-1,i=n/2,t=0;r<co;)
 		t=i-->0?(t=arr[c1][r])+(arr[c1][r]=arr[c2][n-1-r])+(arr[c2][n-1-r]=t)+(t=arr[r][c1])+(arr[r][c1++]=arr[n-1-r][c2])+(arr[n-1-r][c2--]=t):r+++(c1=n/4)+(c2=n-n/4-1)+(i=n/2);
 }
