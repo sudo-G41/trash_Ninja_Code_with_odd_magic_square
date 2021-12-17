@@ -13,6 +13,7 @@ typedef _i zxcv;
 void print(VV, _i);
 void odd(zxcv,VV&);
 void four(_i n,VV&);//개발중
+void two(_i n,VV&);//개발중
 
 int main(_i argc, char** args){
 	VV arr;
@@ -23,20 +24,26 @@ int main(_i argc, char** args){
 		x<n?tmp.push_back(0*++x):arr.push_back(VI((0*y++)+tmp.begin(),tmp.end()));
 	if(n&1)
 		odd(n,arr);
-	else if(((n>>1)^1)&1)
-		four(n,arr);
-	else
+	else if((n>>1)&1)
 		arr[0][0]=2;
+	else
+		four(n,arr);
 	print(arr,n);
 	return 0;
 }
 void odd(zxcv n, VV&arr){
 	for(_i x=n/2,y=0,v=1,e=n*n+1;v<e;)
-		arr[ASDF(y,n)][QWER(x,n)]=arr[y][x]>0?((x=((n-1)-(n-x)%n))*0*(y=(y+2)%n))+v++:v++;
+		arr[ASDF(y,n)][QWER(x,n)]=arr[y][x]>0?v+++((x=((n-1)-(n-x)%n))*0*(y=(y+2)%n)):v++;
 }
 void four(_i n,VV&arr){
 	for(zxcv x=0,y=0,z=0;y<n;++x<n?z:y+++(x=0))
 		arr[y][x]=++z;
+	int qaz=0;
+	for(zxcv r=0,co=n/4,c1=n/4,c2=n-n/4-1,i=n/2,t=0;r<co;)
+		t=i-->0?(t=arr[c1][r])+(arr[c1][r]=arr[c2][n-1-r])+(arr[c2][n-1-r]=t)+(t=arr[r][c1])+(arr[r][c1++]=arr[n-1-r][c2])+(arr[n-1-r][c2--]=t):r+++(c1=n/4)+(c2=n-n/4-1)+(i=n/2);
+}
+void two(int n,VV&){
+	return;
 }
 void print(VV arr, _i n){
 	for(_i x=0,y=0;y<n;y+=x>0?0:1)
