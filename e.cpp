@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include<typeinfo>
 #define QWER(N,n) ((N)+1<(n)?(N)++:((N)=0)+(n)-1)
 #define ASDF(N,n) ((N)>0?1+((N)=(N)-1):0+(0*((N)=((n)-1))))
 
@@ -15,47 +14,7 @@ void print(VV, _i);
 void ma(VV&,_i);
 void odd(zxcv,VV&);
 void four(_i,VV&);
-void two(_i,VV&);//개발중
-
-void make_even(int size,VV& mbj){
-    int tsize = size/2;
-    VV temp; //size/2차 마방진 저장
-	ma(temp,tsize);
-    odd(tsize,temp);
-
-    int set1[tsize][tsize]; // 오른쪽 위
-    int set2[tsize][tsize]; // 오른쪽 아래
-    int set3[tsize][tsize]; // 왼쪽 위
-    int set4[tsize][tsize]; // 왼쪽 아래
-    int i,j;
-    for ( i = 0 ; i < tsize ; i++ ){ // 각 부분에 숫자를 입력
-        for ( j = 0 ; j < tsize ; j++ ){
-            if ( i == tsize/2 ){
-                if ( j >= 1 && j <= ((int)size/4)){
-                    set1[i][j] = 3 * size * size / 4;
-                    set2[i][j] = 0;
-                }else{
-                    set1[i][j] = 0;
-                    set2[i][j] = 3 * size * size / 4;
-                }
-            }else{ 
-                if ( j < ((int)size/4) ){
-                    set1[i][j] = 3 * size * size / 4;
-                    set2[i][j] = 0;
-                }else{
-                    set1[i][j] = 0;
-                    set2[i][j] = 3 * size * size / 4;
-                }
-            }
-        }
-    }
-	for ( i = 0 ; i < size ; i++ ){ // 각부분과 홀수 마방진의 결합
-        for ( j = 0 ; j < size ; j++ ){
-            if ( i < size/2 && j < size/2 ) mbj[i][j] = set1[i][j];
-            else if ( i < size && j < size/2 ) mbj[i][j] =set2[i%tsize][j%tsize];
-        }
-    }
-}
+void two(_i,VV&);
 
 int main(_i argc, Strings args){
 	VV arr;
@@ -69,7 +28,6 @@ int main(_i argc, Strings args){
 		odd(n,arr);
 	else if((n>>1)&1)
 		two(n,arr);
-		// make_even(n,arr);
 	else
 		four(n,arr);
 	print(arr,n);
